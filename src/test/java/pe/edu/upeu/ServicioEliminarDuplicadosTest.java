@@ -2,6 +2,7 @@ package pe.edu.upeu;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -60,5 +61,29 @@ public class ServicioEliminarDuplicadosTest {
         System.out.println("Arreglo vacío - Duplicados encontrados: " + dups);
         System.out.println("Arreglo vacío - Únicos (" + k + "): " + Arrays.toString(Arrays.copyOf(nums, k)));
         Assertions.assertEquals(0, k, "k debe ser 0");
+    }
+
+    @Test
+    public void ejemploMockitoMock() {
+        int[] nums = new int[]{1, 1, 2};
+        ServicioEliminarDuplicados servicio = Mockito.mock(ServicioEliminarDuplicados.class);
+        Mockito.when(servicio.eliminarDuplicados(Mockito.eq(nums))).thenReturn(2);
+        int k = servicio.eliminarDuplicados(nums);
+        Mockito.verify(servicio, Mockito.times(1)).eliminarDuplicados(nums);
+        Assertions.assertEquals(2, k);
+    }
+
+    @Test
+    public void ejemploMockitoSpy() {
+        int[] nums = new int[]{1, 1, 2};
+        ServicioEliminarDuplicadosImpl real = new ServicioEliminarDuplicadosImpl();
+        ServicioEliminarDuplicados spy = Mockito.spy(real);
+        int k = spy.eliminarDuplicados(nums);
+        Mockito.verify(spy, Mockito.times(1)).eliminarDuplicados(nums);
+        Assertions.assertEquals(2, k);
+        int[] expected = new int[]{1, 2};
+        for (int i = 0; i < k; i++) {
+            Assertions.assertEquals(expected[i], nums[i]);
+        }
     }
 }

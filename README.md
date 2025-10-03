@@ -7,7 +7,6 @@ Este proyecto contiene pruebas unitarias de repositorios JPA y un conjunto de ca
 - Si deseas usar la BD de pruebas, ejecuta con `-Dspring.profiles.active=test`.
 
 ## Capturas de pruebas
-Las siguientes imágenes se referencian por ruta relativa dentro del repositorio, por lo que GitHub las mostrará como vista previa automáticamente.
 
 ![IAccesoRepositoryTest](SysAlmacen/screenshots/IAccesoRepositoryTest.png)
 ![ICategoriaRepositoryTest](SysAlmacen/screenshots/ICategoriaRepositoryTest.png)
@@ -21,7 +20,3 @@ Las siguientes imágenes se referencian por ruta relativa dentro del repositorio
 ![IVentCarritoRepositoryTest](SysAlmacen/screenshots/IVentCarritoRepositoryTest.png)
 ![IVentaDetalleRepositoryTest](SysAlmacen/screenshots/IVentaDetalleRepositoryTest.png)
 ![IVentaRepositoryTest](SysAlmacen/screenshots/IVentaRepositoryTest.png)
-
-## Notas
-- Asegúrate de versionar la carpeta `screenshots/` junto con el README para que las imágenes se muestren en GitHub.
-- Usa rutas relativas (como `screenshots/archivo.png`) para garantizar la visualización correcta.
